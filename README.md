@@ -18,7 +18,28 @@ La asignatura de Modelado de Sistemas Fisiológicos forma parte del plan de estu
 Diseñar un gemelo digital de un sistema fisiológico que permita identificar las diferencias entre un paciente afectado por una enfermedad (caso) y un individuo saludable (control) para desarrollar un protocolo de tratamiento mediante un sistema de control en lazo cerrado.
 
 ## Descripción detallada del sistema
-...
+El modelo desarrollado utiliza un circuito eléctrico tipo RLC para representar la dinámica del sistema inmunológico afectado por el SIDA, causado por el virus de inmunodeficiencia humana (VIH). Este virus ataca y debilita el sistema inmunológico al destruir las células T CD4+, esenciales para coordinar la respuesta inmune, dejando al cuerpo vulnerable frente a infecciones oportunistas y ciertos tipos de cáncer.
+
+Componentes del Modelo:
+Resistencias (R₁ y R₂): Simulan las pérdidas en la respuesta inmunitaria debido a inflamación crónica y daño celular, representando la dificultad para activar y mantener una respuesta efectiva.
+
+Inductor (L): Representa la memoria inmunológica del sistema, que se ve comprometida en pacientes con SIDA debido a la destrucción de células T CD4+ y de memoria.
+
+Capacitor (C): Modela la capacidad del sistema para almacenar recursos inmunitarios, como anticuerpos y citoquinas, que también se ven afectados por el daño a las células B.
+
+Fuente de entrada (Vₑ): Simboliza un estímulo externo, como un patógeno o una infección, que activa la respuesta inmune.
+
+Salida (Vₛ): Refleja la respuesta inmunológica generada, la cual es débil en individuos con SIDA debido a la incapacidad del sistema para responder adecuadamente.
+
+Análisis Matemático:
+El modelo se basa en la función de transferencia del circuito, permitiendo analizar la dinámica de las respuestas inmunológicas en individuos sanos y pacientes con SIDA. Las simulaciones realizadas con Python muestran las diferencias en la respuesta entre ambos casos, evidenciando la incapacidad del sistema inmunológico afectado para generar una respuesta eficaz frente a un estímulo externo.
+
+Aplicaciones y Potencial Terapéutico:
+Este enfoque facilita la visualización de las alteraciones funcionales en el sistema inmunológico debido al SIDA, proporcionando una base para explorar estrategias terapéuticas. Entre ellas se incluyen:
+
+Fortalecer la memoria inmunológica (L).
+Restaurar la producción de anticuerpos y citoquinas (C).
+Mitigar la inflamación crónica (R₁ y R₂).
 
 ## Referencias principales
 [1] H. Motulsky, Intuitive biostatistics: a nonmathematical guide to statistical thinking. 4th ed. Oxford, New York, USA: Oxford University Press, 2014.
