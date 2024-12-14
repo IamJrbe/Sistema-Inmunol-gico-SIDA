@@ -4,7 +4,7 @@
 Fernandez Esquivel Hector Andres
 Chaparro Zamora Alain Yahir
 Banuelos Elias Andres Martin
-Departamento de Ingeniería Eléctrica y Electrónica, Tecnológico Nacional de México/IT Tijuana, Blvd. Alberto Limón Padilla s/n, Tijuana, C.P. 22454, B.C., México. Email: correo1@tectijuana.edu.mx; correo2@tectijuana.edu.mx correo3@tectijuana.edu.mx
+Departamento de Ingeniería Eléctrica y Electrónica, Tecnológico Nacional de México/IT Tijuana, Blvd. Alberto Limón Padilla s/n, Tijuana, C.P. 22454, B.C., México. Email: l21212142@tectijuana.edu.mx; l21212147@tectijuana.edu.mx l21212153@tectijuana.edu.mx
 
 ## Asignaturas o departmento donde se puede usar la Actividad
 Modelado de Sistemas Fisiológicos de Ingeniería Biomédica
