@@ -1,0 +1,261 @@
+
+\documentclass[letterpaper,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Friday, December 13, 2024 18:02:41}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{ComputeDefs=
+%1$k_{I}=47202.5937$
+%1$k_{P}=67.6355$
+%1$k_{D}=0.015336$
+%1$C_{r}=1x10^{-6}$
+%1$R_{e}=21.\,\allowbreak 185$
+%1$R_{r}=1432.\,\allowbreak 9$
+%1$C_{e}=1.\,\allowbreak 070\,3\times 10^{-5}$
+%}
+
+
+\input{tcilatex}
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip}
+\pretolerance=2000 \tolerance=3000
+\renewcommand{\abstractname}{Resumen}
+
+\begin{document}
+
+\title{Proyecto Final - Sistema Inmunol\'{o}gico}
+\author{Ba\~{n}uelos Elias Andres Mart\'{\i}n, Chaparro Zamora Alan Yahir,
+Fern\'{a}ndez Esquivel H\'{e}ctor \'{A}ndres \and (21212142, 21212147,
+21212153) \\
+%EndAName
+Departamento de Ingenier\'{\i}a El\'{e}ctrica y Electr\'{o}nica\\
+Tecnol\'{o}gico Nacional de M\'{e}xico / Instituto Tecnol\'{o}gico de Tijuana%
+}
+\maketitle
+
+\noindent \textbf{Palabras clave: }Componentes; Circuito RLC; Estabilidad;
+PID; Sintonizaci\'{o}n.
+
+\noindent Correo: \textbf{l21212142@tectijuana.edu.mx;} \textbf{%
+l21212147@tectijuana.edu.mx;} \textbf{l21212153@tectijuana.edu.mx}
+
+\noindent \noindent Carrera: \textbf{Ingenier\'{\i}a Biom\'{e}dica}
+
+\noindent Asignatura: \textbf{Modelado de Sistemas Fisiol\'{o}gicos}
+
+\noindent Profesor: \href{https://biomath.xyz/}{\textbf{Dr. Paul Antonio
+Valle Trujillo}} (paul.valle@tectijuana.edu.mx)
+
+\section{Funci\'{o}n de transferencia}
+
+\subsection{Ecuaciones principales}
+
+El circuito RLC\ presentado demuestra un comportamiento donde se observa que:
+
+Ve(t) representa la tensi\'{o}n de entrada, que est\'{a} determinada por la
+diferencia de corrientes I1(t) y I2 (t), multiplicada por la resistencia R1.
+Esto indica que R1 act\'{u}a como un elemento de medici\'{o}n de esa
+diferencia de corrientes en el circuito.
+
+\begin{equation*}
+V_{e}(t)=R_{1}(I_{1}(t)-I_{2}(t))
+\end{equation*}
+
+La derivada de la corriente est\'{a} asociada al comportamiento del
+inductor, mientras que la integral de la corriente representa la acumulaci%
+\'{o}n de carga en el capacitor.
+
+\begin{equation*}
+R_{1}(I_{1}(t)-I_{2}(t))=R_{2}I_{2}(t)+L\frac{dI_{2}(t)}{dt}+\frac{1}{C}\int
+I_{2}(t)dt
+\end{equation*}
+
+La salida Vs(t) corresponde al voltaje en el capacitor, que est\'{a}
+relacionado directamente con la carga acumulada en \'{e}l. En t\'{e}rminos
+de la corriente I2(t), este voltaje es proporcional a la integral de la
+corriente dividido por la capacitancia C.
+
+\begin{equation*}
+V_{s}(t)=\frac{1}{C}\int I_{2}(t)dt
+\end{equation*}%
+:
+
+\subsection{Transformada de Laplace}
+
+Al realizar la transformada de Laplace en nuestras ecuaciones principales,
+obtenemos:
+
+\begin{equation*}
+V_{e}(s)=R_{1}(I_{1}(s)-I_{2}(s))
+\end{equation*}
+
+\begin{equation*}
+R_{1}(I_{1}(s)-I_{2}(s))=R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs}
+\end{equation*}
+
+\begin{equation*}
+V_{s}(s)=\frac{I_{2}(s)}{Cs}
+\end{equation*}
+
+\subsection{Procedimiento algebraico}
+
+Con el objetivo de calcular la funci\'{o}n de transferencia, se realizan
+operaciones algebraicas:
+
+\begin{equation*}
+V_{e}(s)=R_{1}(I_{1}(s)-I_{2}(s))
+\end{equation*}
+
+\bigskip Obteniendo $I_{1}$ de la relaci\'{o}n tenemos:
+
+\begin{equation*}
+R_{1}(I_{1}(s)-I_{2}(s))=R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs}
+\end{equation*}
+
+\begin{equation*}
+R_{1}I_{1}(s)=R_{1}I_{2}(s)+R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs}
+\end{equation*}
+
+\begin{equation*}
+I_{1}(s)=(R_{1}I_{2}(s)+R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs})\frac{1%
+}{R_{1}}
+\end{equation*}
+
+Ahora se transcribe en nuestra expresi\'{o}n para tener todo en funci\'{o}n
+de $I_{2}$:
+
+\begin{equation*}
+V_{e}(s)=R_{1}((R_{1}I_{2}(s)+R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs})%
+\frac{1}{R_{1}}-I_{2}(s))
+\end{equation*}
+
+\begin{equation*}
+V_{e}(s)=R_{1}I_{2}(s)+R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs}%
+-R_{1}I_{2}(s)
+\end{equation*}
+
+\begin{equation*}
+V_{e}(s)=R_{2}I_{2}(s)+LsI_{2}(s)+\frac{I_{2}(s)}{Cs}
+\end{equation*}
+
+\begin{equation*}
+V_{e}(s)=I_{2}(s)(R_{2}+Ls+\frac{1}{Cs})
+\end{equation*}
+
+Eliminando $I_{2}$ de ambos lados de la fracci\'{o}n, se formula que:
+
+\begin{equation*}
+\frac{V_{s}(s)}{V_{e}(s)}=\frac{\frac{I_{2}(s)}{Cs}}{I_{2}(s)(R_{2}+Ls+\frac{%
+1}{Cs})}
+\end{equation*}
+
+\subsection{Resultado}
+
+Habiendo realizado el an\'{a}lisis de la secci\'{o}n, se concluye que la
+funci\'{o}n de transferencia del circuito RLC est\'{a} representada por la
+siguiente expresi\'{o}n
+
+\begin{equation*}
+\frac{V_{s}(s)}{V_{e}(s)}=\frac{1}{CLs^{2}+CR_{2}s+1}\allowbreak
+\end{equation*}
+
+\section{Estabilidad del sistema en lazo abierto}
+
+La estabilidad del sistema en lazo abierto se analiza al calcular las raices
+del denominador. En el caso de nuestro sistema:
+
+\begin{equation*}
+CLs^{2}+CR_{2}s+1=0
+\end{equation*}
+
+Los polos del sistema estan dados por lo siguiente:
+
+\begin{eqnarray*}
+\lambda _{1} &=&-\frac{1}{2CL}\left( CR_{2}+\sqrt{C^{2}R_{2}^{2}-4CL}\right)
+\\
+\lambda _{2} &=&-\frac{1}{2CL}\left( CR_{2}-\sqrt{C^{2}R_{2}^{2}-4CL}\right)
+\ 
+\end{eqnarray*}
+
+\bigskip Con los siguientes valores en los componentes:
+
+\begin{eqnarray*}
+R_{2} &=&10 \\
+L &=&5\times 10^{-3} \\
+C &=&50\times 10^{-6}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\lambda _{1} &=&-\frac{1}{2CL}\left( CR_{2}+\sqrt{C^{2}R_{2}^{2}-4CL}\right)
+:\text{Complejas conjugadas con negativo }=-1000i\sqrt{3}-1000 \\
+\lambda _{2} &=&-\frac{1}{2CL}\left( CR_{2}-\sqrt{C^{2}R_{2}^{2}-4CL}\right)
+\ :\text{ Complejas conjugadas con negativo}=1000i\sqrt{3}-1000
+\end{eqnarray*}
+
+\section{Modelo de ecuaciones integro-diferenciales}
+
+El modelo de ecuaciones integro-diferenciales esta dado por:
+
+\begin{eqnarray*}
+I_{1}(t) &=&(V_{e}(t)+R_{1}I_{2}(t))\frac{1}{R_{1}} \\
+I_{2}(t) &=&\int \left[ V_{e}(t)-R_{2}I_{2}(t)-\frac{1}{C}\int i_{2}(t)dt%
+\right] \frac{1}{L} \\
+V_{s}(t) &=&\frac{1}{C}\int I_{2}(t)dt
+\end{eqnarray*}
+
+\section{Error en estado estacionario}
+
+El error en estado estacionario se calcula mediante el siguiente limite:
+
+\begin{equation*}
+e\left( t\right) =\lim_{s\rightarrow 0}sR\left( s\right) \left[ 1-\dfrac{%
+V_{s}\left( s\right) }{V_{e}\left( s\right) }\right] =\lim_{s\rightarrow 0}s%
+\frac{1}{s}\left[ 1-\frac{1}{CLs^{2}+CR_{2}s+1}\right] =0
+\end{equation*}
+
+Es decir, el error en estado estacionario es $0V$.
+
+\begin{eqnarray*}
+R(s) &:&\ \text{Representa la entrada al sistema.} \\
+\dfrac{V_{s}\left( s\right) }{V_{e}\left( s\right) } &:&\text{Representa la
+funcion de transferencia del sistema.}
+\end{eqnarray*}
+
+\section{C\'{a}lculo de componentes para el controlador PID}
+
+Al sintonizar el controlador PID en Simulink, obtenemos los par\'{a}metros
+necesarios para determinar los valores en el circuito f\'{\i}sico
+
+\begin{eqnarray*}
+k_{I} &=&\frac{1}{R_{e}C_{r}}=47202.5937 \\
+k_{P} &=&\frac{R_{r}}{R_{e}}=67.6355 \\
+k_{D} &=&R_{r}C_{e}=0.015336
+\end{eqnarray*}
+
+\bigskip Habiendo obtenido los valores de $k_{I}$, $k_{P}$ y $k_{D}$,
+proponemos el valor de $1x10^{-6}F$ para el capacitor $C_{r}$. Ahora,
+podemos continuar con los calculos de $R_{e}$, $R_{r}$ y $C_{e}$. Obteniendo
+as\'{\i}:
+
+\begin{equation*}
+C_{r}=1x10^{-6}F
+\end{equation*}
+
+\begin{eqnarray*}
+R_{e} &=&\frac{1}{k_{I}C_{r}}=21.\,\allowbreak 185 \\
+R_{r} &=&k_{P}R_{e}=1432.\,\allowbreak 9 \\
+C_{e} &=&\frac{k_{D}}{R_{r}}=1.\,\allowbreak 070\,3\times 10^{-5}
+\end{eqnarray*}
+
+\end{document}
