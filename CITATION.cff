@@ -1,0 +1,45 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Modelado de Sistema Inmunológico-SIDA
+message: >-
+  Visualizar el comportamiento del sistema inmune comparando
+  las formas de onda generadas entre un individuo sano y un
+  individuo paciente de SIDA, para lograr esto se realizará
+  el modelado matemático de un circuito RLC que describe el
+  modelo fisiológico original.
+type: software
+authors:
+  - name-particle: Andres Martin
+    family-names: Banuelos Elias
+    email: L21212142@tectijuana.edu.mx
+    affiliation: Ing. Biomedico
+  - name-particle: Alain
+    family-names: Chaparro Zamora
+    email: L21212147@tectijuana.edu.mx
+    affiliation: Ing. Biomedico
+  - name-particle: Hector
+    family-names: Fernandez Esquivel
+    email: L21212153@tectijuana.edu.mx
+    affiliation: Ing. Biomedico
+repository-code: 'https://github.com/IamJrbe/Sistema-Inmunol-gico-SIDA'
+url: 'https://github.com/'
+abstract: >-
+  El modelo desarrollado utiliza un circuito eléctrico tipo
+  RLC para representar la dinámica del sistema inmunológico
+  afectado por el SIDA, causado por el virus de
+  inmunodeficiencia humana (VIH). Este virus ataca y
+  debilita el sistema inmunológico al destruir las células T
+  CD4+, esenciales para coordinar la respuesta inmune,
+  dejando al cuerpo vulnerable frente a infecciones
+  oportunistas y ciertos tipos de cáncer.
+keywords:
+  - Circuito RLC
+  - Memoria
+  - SIDA
+  - T CD4+
+  - Virus
+license: BSD-2-Clause
+commit: MatLab
+version: 2023a
