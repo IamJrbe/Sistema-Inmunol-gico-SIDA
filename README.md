@@ -48,3 +48,9 @@ Mitigar la inflamación crónica (R₁ y R₂).
 [2] P. A. Valle, L. N. Coria, C. Plata & Y. Salazar, “CAR-T cell therapy for the treatment of ALL: eradication conditions and in silico experimentation,” Hemato, vol. 2, issue 3, pp. 441-462, Jul 2021. https://doi.org/10.3390/hemato2030028 
 
 [3] MathWorks. (n.d.). Sistemas Dinámicos [Online]. Available: https://www.mathworks.com/discovery/dynamic-systems.html
+
+[4]“VIH y sida”, Who.int. [En línea]. Disponible en: https://www.who.int/es/news-room/fact-sheets/detail/hiv-aids. [Consultado: 06-dic-2024].
+
+[5] "VIH/sida”, Medlineplus.gov. [En línea]. Disponible en: https://medlineplus.gov/spanish/ency/article/000594.htm. [Consultado: 06-dic-2024].
+
+[6] H. Niu and Z. Geng, "Stabilization of an underactuated AUV with physical damping on SE(3) via SIDA method," en *2016 35th Chinese Control Conference (CCC)*, Chengdu, China, 2016, pp. 9856-9861. DOI: 10.1109/CHICC.2016.7553196.
